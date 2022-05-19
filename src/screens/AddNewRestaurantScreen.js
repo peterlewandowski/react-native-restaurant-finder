@@ -39,11 +39,11 @@ export default function AddNewRestaurantScreen() {
         <Input
           placeholder="Restaurant Name"
           spellCheck
-          onChangeText={(userText) => setRestaurantName(...newRestaurant, name: userText)}
+          onChangeText={(userText) => setRestaurantName(...newRestaurant, {name: userText})}
         />
         <Input
           placeholder="Address"
-          onChangeText={(text) => setAddress(...newRestaurant, address: text)}
+          onChangeText={(text) => setAddress(...newRestaurant, {address: text})}
         />
         <Input
           placeholder="Photo"
