@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, ScrollView } from 'react-native';
-import RestaurantCard from '../components/RestaurantCard';
+import { ScrollView, Text, View } from 'react-native';
 
 import { Button } from 'react-native-elements'
+import RestaurantCard from '../components/RestaurantCard';
 import { useNavigation } from '@react-navigation/native';
 
 function RestaurantList() {
