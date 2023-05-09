@@ -1,25 +1,34 @@
-import React, { useContext } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native'
-import { RestaurantContext } from '../../App';
+import React, { useContext } from "react";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-import styles from '../../styles';
+import styles from "../../styles";
+import { RestaurantContext } from "../context/RestaurantContext";
 
-export default function RestaurantCard( { restaurant }) {
-    const { setSelectedRestaurant } = useContext(RestaurantContext);
-    const navigation = useNavigation()
-    const handlePress = () => {
-        setSelectedRestaurant(restaurant);
-        navigation.navigate('Details')
-    }
-    return (
-        <TouchableOpacity onPress={handlePress}>
-            <View style={styles.card}>
-                <Image source={{ uri:restaurant.photoUrl }} style={styles.cardImage} />
-                <Text style={styles.cardTitle}>{restaurant.title}</Text>
-            </View>
-        </TouchableOpacity>
-    )
+export default function RestaurantCard({ restaurant }) {
+  const { setSelectedRestaurant } = useContext(RestaurantContext);
+  
+  const navigation = useNavigation();
+  const handlePress = () => {
+    setSelectedRestaurant(restaurant);
+    navigation.navigate("Details");
+  };
+
+  const imageUrl = restaurant.photoUrl;
+
+  return (
+    <TouchableOpacity onPress={handlePress}>
+      <View style={styles.card}>
+        {imageUrl ? (
+          <Image
+            source={{ uri: restaurant.photoUrl }}
+            style={styles.cardImage}
+          />
+        ) : null}
+        <Text style={styles.cardTitle}>{restaurant.title}</Text>
+      </View>
+    </TouchableOpacity>
+  );
 }
 
 // const styles = StyleSheet.create({
