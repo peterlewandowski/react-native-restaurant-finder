@@ -16,7 +16,7 @@ export default function RestaurantCard( { restaurant }) {
         <TouchableOpacity onPress={handlePress}>
             <View style={styles.card}>
                 <Image source={{ uri:restaurant.photoUrl }} style={styles.cardImage} />
-                <Text style={styles.cardTitle}>{restaurant.name}</Text>
+                <Text style={styles.cardTitle}>{restaurant.title}</Text>
             </View>
         </TouchableOpacity>
     )

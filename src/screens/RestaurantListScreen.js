@@ -9,7 +9,7 @@ function RestaurantList() {
     const [restaurants, setRestaurants] = useState();
     useEffect(() => {
         // fetch data from API
-        fetch('https://bocacode-intranet-api.web.app/restaurants')
+        fetch('https://api.sampleapis.com/recipes/recipes')
             .then(response => response.json())
             .then(data => {setRestaurants(data)})
             .catch(alert)
